@@ -15,87 +15,139 @@
 	        <i class="fas fa-bars"></i>
 	      </label>
 	      <ul>
-			<li><a class="active" href="#">Home</a></li>
+			<li><a class="active" href="home.html">Home</a></li>
 			<li><a href="#">Portofolio</a></li>
-	        <li><a href="#">Blog</a></li>
+	        <li><a href="#blog">Blog</a></li>
 	        <li><a href="about.html">About us</a></li>
-	        <li><a href="#">Contact</a></li>
+	        <li><a href="contact.html">Contact</a></li>
 	        <li><a href="#">Admin</a></li>
 	      </ul>
 		</nav>
 		<header>
-			<img src="images/background1.png">
+			<div class="slideshow">
+				<div class="myslide">
+					<img src="images/alexiss.png" style="width:100%">
+				</div>
+				<div class="myslide">
+					<img src="images/store1.png" style="width:100%">
+				</div>
+				<div class="myslide">
+					<img src="images/store2.png" style="width:100%">
+				</div>
+
+				<div class="myslide">
+					<img src="images/store3.png" style="width:100%">
+				</div>
+
+				<div class="myslide">
+					<img src="images/store 4.png" style="width:100%">
+				</div>
+
+				<div class="myslide">
+					<img src="images/store5.png" style="width:100%">
+				</div>
+				<div class="myslide">
+					<img src="images/store6.png" style="width:100%">
+				</div>
+				<div class="prev ">
+					<button  onclick="plusDivs(-1)">&#10094;</button>
+				</div>
+				<div class="next">
+					<button  onclick="plusDivs(1)">&#10095;</button>
+				</div>
+				
+			</div>
 		</header>
 		<main>
-			<h3 class="title">Portofolio</h3>
-			<div class="featured-study">
-				<div class="flex-1">
-					<h4>FEATURED STYDY CASE</h4>
-					<img src="images/alexiss.png">
-				</div>
-				<div class="flex-2">
-					<h4>Alexis</h4>
-					<p>Hello I am Alexis Ndikumana and I am full stack web develop front and back end is my real game I do play every day!!!
-					</p>
-				</div>
-				<div class="flex-2">
-					<h4>Node js</h4>
-					<p>Alexis's real game of playing game in the word
-					</p>
+			<div id="blog">
+
+				<h3 class="title">BLOG</h3>
+				<div class="blog">
+					<div class="card">
+						<div class="card-header">
+							<img src="images/cards.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<img src="images/store1.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<img src="images/store2.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<img src="images/store3.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<img src="images/store 4.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header">
+							<img src="images/store5.png">
+						</div>
+						<div class="card-body">
+							<p>This how we take time for rest and we move forward.</p>
+						</div>
+						<div class="card-footer">
+							<a href=""><i class="far fa-eye"></i> 0</a>
+							<a href=""><i class="fas fa-thumbs-up"></i> 0</a>
+							<a href=""><i class="fas fa-comment"></i> 0</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<h3 class="title">BLOG</h3>
-			<div class="blog">
-				<div class="card">
-					<img src="images/cards.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/store1.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/store2.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/store3.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/store 4.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
-				<div class="card">
-					<img src="images/store5.png">
-					<p>This how we take time for rest and we move forward.</p>
-					<div class="card-footer">
-						<a href="">like</a>
-						<a href="">comment</a>
-					</div>
-				</div>
+			<div class="title">
+				<h3 >Our blog</h3>
 			</div>
-			<h3 class="title">Our blog</h3>
+			
 			<div class="our-blog">
 				<div class="flex-1">
 					<h3>Our blog</h3>
@@ -201,5 +253,6 @@
 			</div>
 		</footer>
 	</div>
+		<script src="javascript.js"></script>
 </body>
 </html>
