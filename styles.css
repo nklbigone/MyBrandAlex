@@ -550,3 +550,11 @@ header .slideshow button{
 .newButton:active {
 	position:relative;
 }
+
+.first-part .newBlog{
+	position:relative;
+	margin-top: -1px;
+	margin-left: -20px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;	
+}
