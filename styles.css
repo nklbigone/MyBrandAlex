@@ -524,3 +524,29 @@ header .slideshow button{
 	top:1px;
 }
 
+.newButton {
+	box-shadow: 0px 10px 14px -7px #9b9c9a;
+	background:linear-gradient(to bottom, #ced1c1 5%, #c0c4bd 100%);
+	background-color:#c0d1ba;
+	border-radius:4px;
+	border:1px solid #d4ddd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+	float: right;
+	margin-top: -40px;
+	margin-right: 42px;
+}
+.newButton:hover {
+	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+.newButton:active {
+	position:relative;
+}
