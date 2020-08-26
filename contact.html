@@ -5,6 +5,8 @@
 	<title>Contact us</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
 </head>
 <body>
 	<div class="container">
@@ -55,20 +57,21 @@
 					</div>
 				</div>
 				<div class="form">
-					<form>
+					<form name="contactForm" action="/contactAction.php" onsubmit=" return contactFormValidation()" method="post" >
 						<div class="first-part">
 							<label>Your name</label></br>
-							<input type="text" name=""></br>
+							<input type="text" name="yourName"></br>
 
 							<label>Your email</label></br>
-							<input type="email" name=""></br>
+							<input type="email" name="yourEmail"></br>
 
 							<label>Subject</label></br>
-							<input type="text" name="">
+							<input type="text" name="yourSubject">
 						</div>
 						<div >
 							<label>Your message</label><br>
-							<textarea type="text" rows="10" cols="40"></textarea>
+							<textarea type="text" rows="10" cols="40" name="yourMassage"></textarea>
+							<input type="submit" value="Submit">
 						</div>
 					</form>
 				</div>
@@ -157,5 +160,17 @@
 		</footer>
 	</div>
 
+	<script>
+		function contactFormValidation() {
+		  var names = document.forms["contactForm"]["yourName"].value;
+		  var emails = document.forms["contactForm"]["yourEmail"].value;
+		  var subjects = document.forms["contactForm"]["yourSubject"].value;
+		  var messages = document.forms["contactForm"]["yourMassage"].value;
+		  if (names == "" || emails == "" || subjects == "" || messages == "") {
+			alert("All fields must be filled out");
+			return false;
+		  }
+		}
+	</script>
 </body>
 </html>
