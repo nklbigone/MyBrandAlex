@@ -1,0 +1,25 @@
+const express = require("express")
+const mongoose = require("mongoose")
+const url = 'mongodb://localhost:27017/blog'
+const app = express()
+
+mongoose.connect(url, { useNewUrlParser: true })
+	const con = mongoose.connection
+	
+	con.on('open', () => {
+
+		console.log('Connected...')
+	})
+	app.use(express.json())
+	const contactRoute = require('./scr/routes/contacts')
+		app.use('/contacts', contactRoute)
+
+	const blogRoute = require('./scr/routes/blogs')
+	app.use('/blogs', blogRoute)
+
+	const articleRoute = require('./scr/routes/articles')
+	app.use('/articles', articleRoute)
+		app.listen(5000, () => {
+		console.log('Server started')
+	})
+
