@@ -1,5 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
+
 const url = 'mongodb://localhost:27017/blog'
 const app = express()
 
@@ -19,4 +20,3 @@ mongoose.connect(url, { useNewUrlParser: true })
 		app.listen(5000, () => {
 		console.log('Server started')
 	})
-
