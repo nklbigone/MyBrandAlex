@@ -4,21 +4,42 @@ import contactRoute from './scr/routes/contacts'
 import blogRoute from './scr/routes/blogs'
 import articleRoute from './scr/routes/articles'
 import queryRoute from './scr/routes/query'
-const url = 'mongodb://localhost:27017/blog'
-const app = express()
+import {upload} from './scr/utils/imageUpload'
+import passport from'passport'
+import dotenv from 'dotenv'
 
-mongoose.connect(url, { useNewUrlParser: true })
+dotenv.config()
+
+//loading passpot
+
+const app = express()
+  require('./scr/config/passport').default(passport)
+
+mongoose.connect(process.env.URL, { useNewUrlParser: true })
 	const con = mongoose.connection
 	
 	con.on('open', () => {
 
 		console.log('Connected...')
 	})
+
+	//bodyparser
+
+app.use(express.urlencoded({extended: false }));
+
+  // passport middleware
+  app.use(passport.initialize());
+
+
 	app.use(express.json())
+	app.use(upload.single("blogPicture"))
 	app.use('/queries', queryRoute)
 	app.use('/contacts', contactRoute)
 	app.use('/blogs', blogRoute)
 	app.use('/articles', articleRoute)
+
+	// app.use('/', require('./routes/index'))
+	app.use('/users', require('./scr/routes/users'))
 	app.listen(6000, () => {
 		console.log('Server started')
 	})
