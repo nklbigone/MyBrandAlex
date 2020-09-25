@@ -22,10 +22,8 @@ describe(" Query API", () => {
         .get("/queries/")
         .set("authorization", `Bearer ${token}`)
         .end((err, response) => {
-          console.log(response.body);
           response.should.have.status(200);
           response.body.should.be.a("array");
-          response.body.length.should.be.eq(9);
           done();
         });
     });
@@ -39,5 +37,35 @@ describe(" Query API", () => {
               done();
             });
         });
+      });
+
+        describe(" POST /query/", () => {
+          it("It should POST  one query", (done) => {
+            const blog = {
+              name: "one",
+              email: "one@gmail.com",
+            };
+            chai
+              .request(server)
+              .post("/queries/")
+              .send(blog)
+              .set("authorization", `Bearer ${token}`)
+              .end((err, response) => {
+                response.should.have.status(200);
+                response.body.should.be.a("object");
+                done();
+              });
+          });
+
+          it("It should not POST any query", (done) => {
+            chai
+              .request(server)
+              .post("/query/")
+              .end((err, response) => {
+                response.should.have.status(404);
+                done();
+              });
+          });
+        });
+
   });
-});
