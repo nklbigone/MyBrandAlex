@@ -1,5 +1,5 @@
 import express from 'express';
-import controller from '../controller/usersController'
+// import controller from '../controller/usersController'
 import jwt from 'jsonwebtoken'
 import Auth from '../middlewares/auths'
 const  router = express.Router()
@@ -7,7 +7,7 @@ const  router = express.Router()
 
 // Register handle
 
-router.post('/register', controller.register)
+// router.post('/register', controller.register)
 
     // Login handle
 

@@ -10,37 +10,13 @@ const expect = chai.expect;
 
 chai.use(chaihttp);
 
-describe(" blog API", () => {
+ const token = jwt.sign(
+   { name: "welcome", id: "fast", mail: "now" },
+   process.env.JWT_SECRET
+ );
+
+describe(" article API", () => {
   // Test get routes
-  const token = jwt.sign(
-    { name: "welcome", id: "fast", mail: "now" },
-    process.env.JWT_SECRET
-  );
-  describe(" GET /article/", () => {
-    it("It should GET all the articles", (done) => {
-      chai
-        .request(server)
-        .get("/articles/")
-        .set("authorization", `Bearer ${token}`)
-        .end((err, response) => {
-          expect(response).to.have.status(200);
-          expect(response.body).to.be.a("array");
-          done();
-        });
-    });
-
-    it("It should not GET all the article", (done) => {
-      chai
-        .request(server)
-        .get("/article/")
-        .end((err, response) => {
-          expect(response).to.have.status(404);
-          done();
-        });
-    });
-  });
-
-
   describe(" POST /article/", () => {
     it("It should POST  one article", (done) => {
       const blog = {
@@ -70,5 +46,30 @@ describe(" blog API", () => {
         });
     });
   });
+
+  describe(" GET /article/", () => {
+    it("It should GET all the articles", (done) => {
+      chai
+        .request(server)
+        .get("/articles/")
+        .set("authorization", `Bearer ${token}`)
+        .end((err, response) => {
+          expect(response).to.have.status(200);
+          expect(response.body).to.be.a("array");
+          done();
+        });
+    });
+
+    it("It should not GET all the article", (done) => {
+      chai
+        .request(server)
+        .get("/article/")
+        .end((err, response) => {
+          expect(response).to.have.status(404);
+          done();
+        });
+    });
+  });
+
 });
 
