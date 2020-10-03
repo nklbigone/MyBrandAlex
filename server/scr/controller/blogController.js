@@ -68,6 +68,7 @@ class blogsController {
       return res, 404, " fails";
     }
   }
+
 }
 
 export default blogsController
